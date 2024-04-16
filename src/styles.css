@@ -1,0 +1,88 @@
+/*
+===================================
+  FONTS
+-----------------------------------
+*/
+@font-face {
+  font-family: 'Epilogue';
+  src: url('./assets/fonts/Epilogue-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: url('./assets/fonts/Epilogue-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+/*
+===================================
+  CUSTOM PROPERTIES
+-----------------------------------
+*/
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+
+
+
+/*
+===================================
+  RESETS
+-----------------------------------
+*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+@media (prefered-reduced-motions: reduced) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto;
+  }
+}
+
+
+
+/*
+===================================
+  GENERAL
+-----------------------------------
+*/
+body {
+  font-family: 'Epilogue';
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--almost-white);
+}
+
+ul {
+  list-style: none;
+}
