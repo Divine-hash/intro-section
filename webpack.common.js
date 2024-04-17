@@ -4,13 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
   entry: {
     app: './src/app.ts',
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './public',
   },
   module: {
     rules: [
