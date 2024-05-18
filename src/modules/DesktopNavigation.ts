@@ -1,16 +1,30 @@
 export default class DeskTopNavigaton {
-  navbar: HTMLElement;
+  private navbar: HTMLElement;
 
-  constructor(navbar: HTMLElement) {
-    this.navbar = navbar;
-    navbar.addEventListener('click', this.onClickEvent.bind(this));
+  constructor(header: HTMLElement) {
+    this.navbar = <HTMLElement>header.querySelector('#navigation');
+    this.onClickEvent = this.onClickEvent.bind(this);
+    this.onKeydownEvent = this.onKeydownEvent.bind(this);
+
+    this.navbar.addEventListener('click', this.onClickEvent);
+    this.navbar.addEventListener('keydown', this.onKeydownEvent);
+    console.log('DESKTOP NAIGATION');
   }
 
   private onClickEvent({target}: MouseEvent): void {
-    let toggleBtn = (<HTMLButtonElement>target).closest('button');
+    let toggleBtn = (<HTMLElement>target).closest('button');
     if (!toggleBtn) return;
     if (toggleBtn.dataset.id != 'toggle-btn') return;
     this.toggleMenu(toggleBtn);
+  }
+
+  private onKeydownEvent(event: KeyboardEvent) {
+    let target = <HTMLElement>event.target;
+    if (target.tagName != 'BUTTON') return;
+    if (event.code == 'Escape' && target.getAttribute('aria-expanded') == 'true') {
+      this.toggleMenu(target as HTMLButtonElement);
+      target.focus();
+    }
   }
 
   private toggleMenu(toggleBtn: HTMLButtonElement): void {
@@ -21,5 +35,9 @@ export default class DeskTopNavigaton {
       toggleBtn.classList.remove('showpopup');
       toggleBtn.setAttribute('aria-expanded', 'false');
     }
+  }
+
+  public removeDeskTopListeners() {
+    this.navbar.removeEventListener('click', this.onClickEvent);
   }
 }

@@ -1,90 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
 <body>
-  <header class="header">
-    <div>
-      <img src="./assets/images/logo.svg" alt="">
-    </div>
+	<header class="header" id="header">
+		<div>
+			<img src="./assets/images/logo.svg" alt="">
+		</div>
 
-    <nav class="nav" id="navigation">
-      <ul class="nav__list">
-        <li>
-          <button type="button" aria-expanded="false" aria-controls="features" data-id="toggle-btn">
-            Features
-            <span>
-              <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
-            </span>
-          </button>
-          <div class="outer">
-            <div class="inner">
-              <ul id="features" class="submenu">
-                <li>
-                  <span><img src="./assets/images/icon-todo.svg" alt=""></span>
-                  <a href="#">Todo List</a>
-                </li>
-                <li>
-                  <span><img src="./assets/images/icon-calendar.svg" alt=""></span>
-                  <a href="#">Calender</a>
-                </li>
-                <li>
-                  <span><img src="./assets/images/icon-reminders.svg" alt=""></span>
-                  <a href="#">Reminders</a>
-                </li>
-                <li>
-                  <span><img src="./assets/images/icon-planning.svg" alt=""></span>
-                  <a href="#">Planning</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <button type="button" aria-expanded="false" aria-controls="company" data-id="toggle-btn">
-            Company
-            <span>
-              <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
-            </span>
-          </button>
-          <div class="outer">
-            <div class="inner">
-              <ul id="company" class="submenu">
-                <li><a href="#">History</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-      <div class="nav__login">
-        <a href="#">Login</a>
-        <button type="button">Register</button>
-      </div>
-    </nav>
-    <div class="header__menu">
-      <img src="./assets/images/icon-menu.svg" alt="">
-    </div>
-  </header>
+		<button class="header__menu" data-id="toggle-btn" aria-expanded="false" aria-controls="navigation">
+			<img src="./assets/images/icon-menu.svg" alt="">
+			<img src="./assets/images/icon-close-menu.svg" alt="">
+		</button>
 
-  <!-- <main>
-    <div class="hero"></div>
-    <section>
-      <h1>Make remote work</h1>
-      <p>
-        Get your team in sync, no matter your location. Streamline processes,
-        create team rituals, and watch productivity soar.
-      </p>
-      <a href="#">Learn more</a>
-      <div></div>
-    </section>
-  </main> -->
+		<nav class="nav" id="navigation">
+			<ul class="nav__list">
+				<li>
+					<button type="button" aria-expanded="false" aria-controls="features" data-id="toggle-btn">
+						Features
+						<span>
+							<svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+						</span>
+					</button>
+					<div class="outer">
+						<div class="inner">
+							<ul id="features" class="submenu">
+								<li>
+									<span><img src="./assets/images/icon-todo.svg" alt=""></span>
+									<a href="#">Todo List</a>
+								</li>
+								<li>
+									<span><img src="./assets/images/icon-calendar.svg" alt=""></span>
+									<a href="#">Calender</a>
+								</li>
+								<li>
+									<span><img src="./assets/images/icon-reminders.svg" alt=""></span>
+									<a href="#">Reminders</a>
+								</li>
+								<li>
+									<span><img src="./assets/images/icon-planning.svg" alt=""></span>
+									<a href="#">Planning</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button type="button" aria-expanded="false" aria-controls="company" data-id="toggle-btn">
+						Company
+						<span>
+							<svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+						</span>
+					</button>
+					<div class="outer">
+						<div class="inner">
+							<ul id="company" class="submenu">
+								<li><a href="#">History</a></li>
+								<li><a href="#">Our Team</a></li>
+								<li><a href="#">Blog</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+
+			<div class="nav__login">
+				<a href="#">Login</a>
+				<button type="button">Register</button>
+			</div>
+		</nav>
+		<div class="overlay"></div>
+	</header>
+
+	<main class="main">
+		<section class="main__container container">
+			<div class="main__hero">
+				<picture>
+					<source media='(min-width: 928px)'
+									srcset='assets/images/image-hero-desktop.png'/>
+					<source media='(max-width: 720px)'
+									srcset='assets/images/image-hero-mobile.png'/>
+					<img src='assets/images/image-hero-mobile.png'/>
+				</picture>
+			</div>
+
+			<div class="main__content">
+				<h1 class="main__title">Make remote work</h1>
+				<p class="main__disc">
+					Get your team in sync, no matter your location. Streamline processes,
+					create team rituals, and watch productivity soar.
+				</p>
+				<a href="#" class="main__button">Learn more</a>
+				<div class="main__logos" data-animated="true">
+					<ul class="logos">
+						<li><img src="./assets/images/client-databiz.svg" alt=""></li>
+						<li class="big"><img src="./assets/images/client-audiophile.svg" alt=""></li>
+						<li><img src="./assets/images/client-meet.svg" alt=""></li>
+						<li><img src="./assets/images/client-maker.svg" alt=""></li>
+						<li class="test"><img src="./assets/images/client-databiz.svg" alt=""></li>
+						<li class="big"><img src="./assets/images/client-audiophile.svg" alt=""></li>
+						<li><img src="./assets/images/client-meet.svg" alt=""></li>
+						<li><img src="./assets/images/client-maker.svg" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
 </body>
 </html>
