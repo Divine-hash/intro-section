@@ -79,7 +79,6 @@ input, textarea, select, button {
 body {
   font-family: 'Epilogue';
   min-height: 100vh;
-  overflow-x: hidden;
   line-height: 1.5;
   background-color: var(--almost-white);
 }
@@ -388,10 +387,10 @@ ul {
   align-items: end;
 }
 
-.main__container img {
+/* .main__container img {
   width: 100%;
   object-fit: cover;
-}
+} */
 
 .main__title {
   font-size: 35px;
