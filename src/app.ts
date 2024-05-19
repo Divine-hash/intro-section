@@ -1,6 +1,9 @@
 import './styles.css';
 import DeskTopNavigaton from './modules/DesktopNavigation';
 import MobileNavigation from './modules/MobileNavigation';
+import { scrollElements } from './modules/infiniteScroll';
+
+const scrollableElement = <HTMLDivElement>document.querySelector('[data-id="logo-container"]');
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -21,6 +24,7 @@ function init(): void {
   const header = <HTMLElement>document.getElementById('header');
   window.addEventListener('resize', () => activateNavMenu(header, state));
   activateNavMenu(header, state);
+  scrollElements(scrollableElement);
 }
 
 function activateNavMenu(header: HTMLElement, state: WindowState) {
