@@ -101,6 +101,36 @@ ul {
   outline-offset: 4px;
 }
 
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--almost-white);
+  display: grid;
+  place-items: center;
+  transition: opacity .4s ease-in-out, visibility .4ms ease-in-out;
+  z-index: 999;
+}
+
+.loader-screen .loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border: 5px solid rgb(189, 189, 189);;
+  border-block-start-color: var(--almost-black);
+  border-radius: 50%;
+  animation: rotate 800ms linear infinite;
+}
+
+.loader-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 45em) {
   .overlay {
     position: fixed;

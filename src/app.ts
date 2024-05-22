@@ -4,7 +4,9 @@ import MobileNavigation from './modules/MobileNavigation';
 import { scrollElements } from './modules/infiniteScroll';
 
 const scrollableElement = <HTMLDivElement>document.querySelector('[data-id="logo-container"]');
+const loaderScreen = <HTMLElement>document.querySelector('.loader-screen');
 
+window.addEventListener('load', () => loaderScreen.classList.add('hide'));
 document.addEventListener('DOMContentLoaded', init);
 
 let desktop: DeskTopNavigaton | null = null;
